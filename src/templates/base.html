@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Portafolio | Ignacio González{% endblock %}</title>
+        <meta name="description" content="Portafolio de Ignacio González, desarrollador web">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Ignacio González">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
+    </head>
+    <body>
+        <header class="container-fluid text-center py-4 border-bottom">
+            <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h1>Nacho</h1>
+                    </div>
+                    <div>
+                        <span id="reloj"></span>
+                    </div>
+            </div>
+            
+            <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+                <div class="container-fluid">
+                    <!-- Cambiar foto, muy autoreferente -->
+                    <a href="/"><i class="bi bi-house"></i></a>
+                    <!-- Implementar bootstrap -->
+                    <a href="/" target="_self">Inicio</a>
+                    <a href="/about/" target="_self">about</a>
+                    <a href="/contact/" target="_self">contact</a>
+                    <a href="/proyectos/wallet/login/" target="_self">Wallet</a>
+                    <div class="form-check form-switch form-check-reverse">
+                        <input class="form-check-input" type="checkbox" role="switch" id="switchModoOscuro">
+                        </input>
+                        <label class="form-check-label" for="switchModoOscuro">Modo Oscuro</label>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container my-5">
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="container-fluid text-center py-3 border-top">
+            <div class="row">
+                <div class="col">
+                    <p>&copy; 2026 Ignacio González. Todos los derechos reservados.</p>
+                </div>
+                <div class="col">
+                    <a href="#navbar">Volver al inicio</a>
+                </div>
+                <!-- Enlace a contacto -->
+                <div class="col">
+                    <p>Mis redes</p>
+                    <div class="row" id="redes">
+                        <!-- Linkedin -->
+                        <div class="col"></div>
+                        <!-- GitHub -->
+                        <div class="col"></div>
+                        <!-- otro -->
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script src="../assets/js/main.js"></script>
+        {% block scripts %}{% endblock %}
+    </body>
+</html>

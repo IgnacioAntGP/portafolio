@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}Portafolio | contacto{% endblock %}
+
+{% block content %} 
+<section class="contact-section">
+    <form action="" method="get" enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title border-bottom">Formulario de Contacto</h3>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label" for="nombre">Nombre</label>
+                    <input class="form-control" type="text" name="nombre" id="nombre" size="50" maxlength="30"
+                    placeholder="Ingrese su nombre completo" required>
+
+                    <label class="form-label" for="email">Email</label>
+                    <input class="form-control" type="email" name="email" id="email" size="50" required>
+
+                    <label class="form-label" for="password">Password</label>
+                    <input class="form-control" type="password" name="password" id="password" size="50" required>
+
+                    <label class="form-label" for="fnac">Fecha Nacimiento</label>
+                    <input class="form-control" type="date" name="fnac" id="fnac" min="1900-01-01" max="2030-12-31">
+
+                    <label class="form-label" for="hnac">Hora Nacimiento</label>
+                    <input class="form-control" type="time" name="hnac" id="hnac">
+
+                    <label class="form-label" for="gender">Cuál es tu género?</label>
+                    <select class="form-select" name="gender" id="gender">
+                        <option selected value="N/A" disabled selected>Selecciona tu género</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="roca">Soy una roca</option>
+                        <option value="otro">Otro</option>
+                    </select>
+
+                    <div class="my-2">
+                        <label class="form-check-label" for="">
+                            Qué fue primero?
+                        </label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="huevo" name="radio" value="huevo" checked>
+                            <label class="form-check-label" for="huevo">Huevo</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="gallina" name="radio" value="gallina">
+                            <label class="form-check-label" for="gallina">Gallina</label>
+                        </div>
+                    </div>
+                    
+                    <div class="my-2">
+                        <label class="form-label" for="">Qué deportes te gustaría practicar (marcar todas las posibles preferencias)
+                        </label>
+                        <div class="class-check">
+                            <input class="form-check-input" type="checkbox" id="ciclismo" name="ciclismo" value="ciclismo">
+                            <label for="ciclismo">Ciclismo</label>
+                        </div>
+                        <div class="class-check">
+                            <input class="form-check-input" type="checkbox" id="trecking" name="trecking" value="trecking">
+                            <label for="trecking">Trecking</label>
+                        </div>
+                        <div class="class-check">
+                            <input class="form-check-input" type="checkbox" id="fútbol" name="fútbol" value="fútbol">
+                            <label for="fútbol">Fútbol</label>
+                        </div>
+                        <div class="class-check">
+                            <input class="form-check-input" type="checkbox" id="natación" name="natación" value="natación">
+                            <label for="natación">Natación</label>
+                        </div>
+                        <div class="class-check">
+                            <input class="form-check-input" type="checkbox" id="patinaje" name="patinaje" value="patinaje">
+                            <label for="patinaje">Patinaje</label>
+                        </div>
+                    </div>
+                    
+                    <div class="my-2">
+                        <label for="formFile" class="form-label">Foto de Perfil</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+                    
+                    <label class="form-label" for="autos">Cuantos autos tienes?</label>
+                    <input class="form-control" type="number" name="autos" id="autos" min="-10" max="10" value="0">
+                    
+                    <label class="form-label" for="color">Selecciona tu color favorito</label>
+                    <input class="form-control form-control-color" type="color" name="color" id="color" title="Selecciona tu color favorito" value="#000">
+                    
+                    <label class="form-label" for="url">Si tienes página web, indícanos cual es...</label>
+                    <input class="form-control" type="url" name="url" id="url">
+                    <div class="container text-center my-2">
+                        <div class="row">
+                            <div class="col">
+                                <input class="btn btn-primary" type="submit" value="Enviar">
+                            </div>
+                            <div class="col">
+                                <input class="btn btn-secondary" type="reset" value="Limpiar">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+{% endblock %}

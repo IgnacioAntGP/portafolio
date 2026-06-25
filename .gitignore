@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.DS_Store
+.vscode/
+.env
+proyecto_envio_v1/
+proyecto_envio_v1.zip

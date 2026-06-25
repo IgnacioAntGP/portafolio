@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- login.html -->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wallet - Login</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/proyectos/wallet/css/styleWallet.css">
+  </head>
+  <body>
+    <header class="container-fluid text-center py-4 border-bottom">
+      <h1>Bienvenido a Wallet</h1>
+      <a href="/">Volver al menú</a>
+    </header>
+    <main class="container my-4">
+      <form action="" method="post" name="login-form" id="login-form">
+        <!-- Formulario de inicio de sesión -->
+        <div class="card">
+          <div class="card-header text-center">
+            <h2>Iniciar Sesión</h2>
+          </div>
+          <div class="card-body">
+            <!-- Email-->
+              <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Ejemplo: nombre@gmail.com">
+                <p id="validateEmailResponse" class="text-danger small mt-1"></p>
+              </div>
+              <!-- Password -->
+              <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese contraseña">
+                <p id="validatePassResponse" class="text-danger small mt-1"></p>
+              </div>
+              <!-- Recordarme -->
+              <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
+                <label class="form-check-label" for="rememberMe">Recordarme</label>
+              </div>
+              <!-- Botón de inicio de sesión -->
+              <button type="submit" class="btn btn-primary" id="login_btn">Iniciar Sesion</button>
+          </div>
+        </div>
+      </form>
+      <p id="loginResponse" class="text-danger small mt-1"></p>
+    </main>
+    <footer class="container-fluid text-center py-3 border-top">
+      <p>&copy; 2026 Wallet App. Todos los derechos reservados.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="/proyectos/wallet/js/main.js" type="module"></script>
+    <script src="/proyectos/wallet/js/login.js" type="module"></script>
+  </body>
+</html>

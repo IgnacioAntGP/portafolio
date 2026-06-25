@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Acerca de mí | Ignacio González{% endblock %}
+
+{% block content %}
+<div class="row">
+    <!-- Sección sobre mí -->
+    <div class="col">
+        <section class="aboutMe">
+            <h2>Acerca de mí</h2>
+            <p>Hola, soy Ignacio González, un desarrollador web apasionado por crear experiencias digitales excepcionales.</p>
+        </section>
+        <section class="aboutProjects">
+            <h2>Mis Proyectos</h2>
+            <p>En esta sección se encuentran mis <span>proyectos</span> más importantes realizados a la fecha:</p>
+            <div class="row">
+                <div class="col">
+                    <a href="./proyectos/wallet/">Wallet Alkaly</a>
+                </div>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
+        </section>
+    </div>
+
+    <div class="col col-1">
+        <!-- Lateral de Habilidades-->
+        <aside class="skills">
+            <div class="row">
+                <div class="col">
+                    <section class="skills-set">
+                        <h6>Habilidades técnicas</h6>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </section>
+                </div>
+                
+                <div class="col">
+                    <section class="skills-set">
+                        <h6>Habilidades blandas</h6>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+{% endblock %}
