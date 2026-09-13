@@ -1,29 +1,44 @@
 <header class="container-fluid text-center py-4 border-bottom">
-    <div class="d-flex justify-content-between align-items-center">
-            <div>
-                <h1>Nacho</h1>
-            </div>
-            <div>
-                <span id="reloj"></span>
-            </div>
+    <div class="container-fluid py-2 px-4 d-flex justify-content-between align-items-center">
+        <span class="fs-4 fw-bold mb-0">Ignacio González</span>
+        <span id="reloj" class="text-secondary small font-monospace"></span>
     </div>
     
     <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
-        <div class="container-fluid">
-            <!-- Cambiar foto, muy autoreferente -->
-            <a href="/"><i class="bi bi-house"></i></a>
-            <!-- Implementar bootstrap -->
-            <a href="/" target="_self">Inicio</a>
-            <a href="/about/" target="_self">about</a>
-            <a href="/contact/" target="_self">contact</a>
-            <a href="/proyectos/wallet/login/" target="_self">Wallet</a>
-            <a href="/proyectos/smart-task/index/" target="_self">Smart Task</a>
-            <a href="/proyectos/biblioteca-untec/index/" target="_self">Biblioteca UNTEC</a>
-            <a href="/proyectos/alkemy-manager/index/" target="_self">Alkemy Manager</a>
-            <div class="form-check form-switch form-check-reverse">
-                <input class="form-check-input" type="checkbox" role="switch" id="switchModoOscuro">
-                </input>
-                <label class="form-check-label" for="switchModoOscuro">Modo Oscuro</label>
+        <div class="container-fluid px-4">
+            <a class="navbar-brand text-primary" href="/" title="Inicio">
+                <i class="bi bi-house-door-fill"></i>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about/">Sobre mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact/">Contacto</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Proyectos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/proyectos/smart-task/">SmartTask (Java SE)</a></li>
+                            <li><a class="dropdown-item" href="/proyectos/biblioteca-untec/">Biblioteca UNTEC (Jakarta EE)</a></li>
+                            <li><a class="dropdown-item" href="/proyectos/alkemy-manager/">Alkemy Manager (Spring Boot)</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/proyectos/wallet/login/">Alke Wallet (Frontend Demo)</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="form-check form-switch d-flex align-items-center gap-2 m-0">
+                    <input class="form-check-input" type="checkbox" role="switch" id="switchModoOscuro">
+                    <label class="form-check-label small" for="switchModoOscuro">
+                        <i class="bi bi-moon-stars"></i>
+                    </label>
+                </div>
             </div>
         </div>
     </nav>
