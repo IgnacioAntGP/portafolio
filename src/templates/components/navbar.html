@@ -15,30 +15,23 @@
 
             <div class="collapse navbar-collapse" id="menuPrincipal">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/about/">Sobre mí</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/contact/">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ '/' | url }}">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ '/about/' | url }}">Sobre mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ '/contact/' | url }}">Contacto</a></li>
                     
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Proyectos
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/proyectos/smart-task/">SmartTask (Java SE)</a></li>
-                            <li><a class="dropdown-item" href="/proyectos/biblioteca-untec/">Biblioteca UNTEC (Jakarta EE)</a></li>
-                            <li><a class="dropdown-item" href="/proyectos/alkemy-manager/">Alkemy Manager (Spring Boot)</a></li>
+                            <li><a class="dropdown-item" href="{{ '/proyectos/smart-task/' | url }}">SmartTask (Java SE)</a></li>
+                            <li><a class="dropdown-item" href="{{ '/proyectos/biblioteca-untec/' | url }}">Biblioteca UNTEC (Jakarta EE)</a></li>
+                            <li><a class="dropdown-item" href="{{ '/proyectos/alkemy-manager/' | url }}">Alkemy Manager (Spring Boot)</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/proyectos/wallet/login/">Alke Wallet (Frontend Demo)</a></li>
+                            <li><a class="dropdown-item" href="{{ '/proyectos/wallet/login/' | url }}">Alke Wallet (Frontend Demo)</a></li>
                         </ul>
                     </li>
                 </ul>
-
-                <div class="form-check form-switch d-flex align-items-center gap-2 m-0">
-                    <input class="form-check-input" type="checkbox" role="switch" id="switchModoOscuro">
-                    <label class="form-check-label small" for="switchModoOscuro">
-                        <i class="bi bi-moon-stars"></i>
-                    </label>
-                </div>
             </div>
         </div>
     </nav>
