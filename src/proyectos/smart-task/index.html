@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+
+{% block title %}SmartTask | Ficha Técnica{% endblock %}
+
+{% block content %}
+<article class="py-2">
+    <!-- Sección Contenedora: Presentación General del Proyecto -->
+    <section class="card border-0 shadow-sm bg-body-tertiary p-4 mb-4">
+        <div class="row g-4">
+            <!-- Bloque Principal: Descripción y Acciones -->
+            <div class="col-12 col-lg-8">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Java SE (JDK 17/21)</span>
+                    <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">JUnit 5</span>
+                    <span class="badge bg-dark-subtle text-dark border border-dark-subtle">JavaDoc</span>
+                    <span class="badge bg-success-subtle text-success border border-success-subtle">EclEmma (&gt;88% Coverage)</span>
+                </div>
+
+                <h1 class="display-6 fw-bold text-body-emphasis mb-3">SmartTask</h1>
+                <p class="lead text-body-secondary">
+                    Aplicación de consola para la gestión de tareas y productividad. Diseñada bajo principios de Programación Orientada a Objetos (POO), polimorfismo, programación defensiva y pruebas unitarias.
+                </p>
+
+                <div class="d-flex flex-wrap gap-2 pt-2">
+                    <a href="https://github.com/IgnacioAntGP/SmartTask" target="_blank" rel="noopener noreferrer" class="btn btn-dark">
+                        <i class="bi bi-github me-1"></i> Repositorio GitHub
+                    </a>
+                    <a href="/" class="btn btn-outline-secondary">Volver al Inicio</a>
+                </div>
+            </div>
+
+            <!-- Subsección Anidada: Ficha Técnica Resumen -->
+            <section class="col-12 col-lg-4">
+                <div class="p-3 bg-body rounded border shadow-sm h-100">
+                    <h2 class="h5 fw-bold mb-3 border-bottom pb-2">Especificaciones Técnicas</h2>
+                    <dl class="row mb-0 small">
+                        <dt class="col-5 text-body-secondary">Lenguaje:</dt>
+                        <dd class="col-7 text-body-emphasis">Java Standard Edition</dd>
+
+                        <dt class="col-5 text-body-secondary">Testing:</dt>
+                        <dd class="col-7 text-body-emphasis">JUnit 5</dd>
+
+                        <dt class="col-5 text-body-secondary">Cobertura:</dt>
+                        <dd class="col-7 text-body-emphasis">JaCoCo / EclEmma</dd>
+
+                        <dt class="col-5 text-body-secondary">Paradigma:</dt>
+                        <dd class="col-7 text-body-emphasis">POO, SRP &amp; DRY</dd>
+
+                        <dt class="col-5 text-body-secondary">Documentación:</dt>
+                        <dd class="col-7 text-body-emphasis">JavaDoc HTML</dd>
+
+                        <dt class="col-5 text-body-secondary">Distribución:</dt>
+                        <dd class="col-7 text-body-emphasis">JAR</dd>
+                    </dl>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Secciones Detalladas -->
+    <div class="row g-4">
+        <!-- Columna Izquierda: Arquitectura POO y Testing -->
+        <div class="col-12 col-lg-7">
+            <!-- Diseño Orientado a Objetos -->
+            <section class="card border-0 shadow-sm bg-body-tertiary p-4 mb-4">
+                <h2 class="h4 fw-bold text-body-emphasis mb-3">Diseño de Clases &amp; Principios POO</h2>
+                <p class="text-body-secondary small">
+                    El núcleo del gestor desacopla la captura por consola de la lógica de procesamiento para cumplir con el Principio de Responsabilidad Única (SRP):
+                </p>
+
+                <ul class="list-group list-group-flush bg-transparent small mb-0">
+                    <li class="list-group-item bg-transparent px-0 text-secondary">
+                        <strong class="text-body-emphasis">Herencia y Polimorfismo:</strong> Definición de la clase abstracta base <code>Tarea</code> extendida por <code>TareaNormal</code> y <code>TareaUrgente</code>, permitiendo al contenedor <code>GestorTareas</code> manipular listas polimórficas (<code>List&lt;Tarea&gt;</code>).
+                    </li>
+                    <li class="list-group-item bg-transparent px-0 text-secondary">
+                        <strong class="text-body-emphasis">Encapsulamiento:</strong> Atributos protegidos y privados gestionados mediante accesores controlados, junto con identificadores gestionados por el método de negocio <code>generarNuevoId()</code>.
+                    </li>
+                    <li class="list-group-item bg-transparent px-0 text-secondary">
+                        <strong class="text-body-emphasis">Programación Defensiva:</strong> Módulo de utilidades dedicado para el saneamiento de entradas con <code>Scanner</code>, previniendo excepciones por entrada de datos inválida mediante bucles de reintento controlados.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Pruebas Unitarias y Cobertura -->
+            <section class="card border-0 shadow-sm bg-body-tertiary p-4">
+                <h2 class="h4 fw-bold text-body-emphasis mb-3">Suite de Pruebas Unitarias - JUnit 5</h2>
+                <p class="text-body-secondary small">
+                    Estructuración de casos de prueba mediante <code>@BeforeEach</code>:
+                </p>
+
+                <ul class="list-group list-group-flush bg-transparent small mb-0">
+                    <li class="list-group-item bg-transparent px-0 text-secondary">
+                        <strong class="text-body-emphasis">Documentación (<code>@DisplayName</code>):</strong> Descripciones semánticas y legibles en cada método de prueba que detallan el requerimiento verificado ante fallos o reportes de compilación.
+                    </li>
+                    <li class="list-group-item bg-transparent px-0 text-secondary">
+                        <strong class="text-body-emphasis">Separación de Clases de Test:</strong> Distribución de pruebas (<code>GestorTareasTest</code>, <code>TareaNormalTest</code>, <code>TareaUrgenteTest</code>) validando colecciones, ordenamiento con <code>Comparator</code> y aserciones compuestas (<code>assertTrue</code>, <code>assertEquals</code>, <code>assertFalse</code>).
+                    </li>
+                    <li class="list-group-item bg-transparent px-0 text-secondary">
+                        <strong class="text-body-emphasis">Cobertura de Código:</strong> Exclusión de la capa de presentación de consola (<code>.run</code>) en la configuración de EclEmma para medir estrictamente la lógica de negocio, alcanzando más del 88% de cobertura en el código fuente.
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Columna Derecha: Ejecución y Comandos -->
+        <div class="col-12 col-lg-5">
+            <section class="card border-0 shadow-sm bg-body-tertiary p-4 h-100">
+                <h2 class="h4 fw-bold text-body-emphasis mb-3">Ejecución &amp; Distribución</h2>
+                <p class="text-body-secondary small">
+                    Empaquetado para ejecución autónoma mediante terminal sin dependencia de un IDE:
+                </p>
+
+                <!-- Comandos de Ejecución -->
+                <div class="p-3 bg-body rounded border mb-3">
+                    <h3 class="h6 fw-bold text-primary mb-2">Comando de Inicialización</h3>
+                    <pre class="bg-dark text-light p-2 rounded small mb-2"><code>java -jar SmartTask.jar</code></pre>
+                    <p class="text-secondary small mb-0">
+                        Requiere un entorno de ejecución Java JRE 17 o superior disponible en la ruta del sistema.
+                    </p>
+                </div>
+
+                <!-- Resumen de Entregables -->
+                <h3 class="h6 fw-bold text-body-emphasis mb-2">Estructura de Entregables</h3>
+                <div class="table-responsive">
+                    <table class="table table-sm table-bordered align-middle small mb-0">
+                        <thead class="table-secondary">
+                            <tr>
+                                <th>Componente</th>
+                                <th>Descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>src/</code></td>
+                                <td>Código fuente modular (clases, run, utils, tests)</td>
+                            </tr>
+                            <tr>
+                                <td><code>SmartTask.jar</code></td>
+                                <td>Binario ejecutable desde consola</td>
+                            </tr>
+                            <tr>
+                                <td><code>doc/</code></td>
+                                <td>Documentación técnica generada con JavaDoc</td>
+                            </tr>
+                            <tr>
+                                <td><code>PruebasJUnit.zip</code></td>
+                                <td>Suite de pruebas unitarias empaquetada</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+</article>
+{% endblock %}
