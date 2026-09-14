@@ -32,10 +32,10 @@ jobs:
       - name: Instalar dependencias
         run: npm install
 
-      - name: Compilar con Eleventy
+      - name: Compilar sitio con Eleventy
         run: npm run build
 
-      - name: Configurar GitHub Pages
+      - name: Configurar entorno de GitHub Pages
         uses: actions/configure-pages@v4
 
       - name: Subir artefacto compilado (dist)
