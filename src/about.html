@@ -3,55 +3,145 @@
 {% block title %}Acerca de mí | Ignacio González{% endblock %}
 
 {% block content %}
-<div class="row">
-    <!-- Sección sobre mí -->
-    <div class="col">
-        <section class="aboutMe">
-            <h2>Acerca de mí</h2>
-            <p>Hola, soy Ignacio González, un desarrollador web apasionado por crear experiencias digitales excepcionales.</p>
+<div class="row g-4">
+    <!-- Columna Principal: Sobre mí y Proyectos -->
+    <div class="col-12 col-lg-8">
+        <!-- Sección Sobre Mí -->
+        <section class="card border-0 shadow-sm bg-body-tertiary p-4 mb-4">
+            <h1 class="h2 fw-bold text-body-emphasis mb-3">Acerca de mí</h1>
+            <p class="lead text-body-secondary mb-3">
+                Estudiante de Ingeniería en Informática enfocado en el desarrollo de software, 
+                arquitectura en capas y calidad de código.
+            </p>
+            <p class="text-secondary small mb-0">
+                Cuento con sólida formación técnica y experiencia práctica en la creación de aplicaciones web, 
+                servicios REST y soluciones orientadas a objetos utilizando Java, Spring Boot, Jakarta EE y 
+                bases de datos relacionales. Me caracterizo por mi adaptabilidad, 
+                capacidad de aprendizaje autónomo y enfoque riguroso en buenas prácticas de ingeniería.
+            </p>
         </section>
-        <section class="aboutProjects">
-            <h2>Mis Proyectos</h2>
-            <p>En esta sección se encuentran mis <span>proyectos</span> más importantes realizados a la fecha:</p>
-            <div class="row">
-                <div class="col">
-                    <a href="./proyectos/wallet/">Wallet Alkaly</a>
-                </div>
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
+
+        <!-- Sección Soluciones / Proyectos Destacados -->
+        <section class="card border-0 shadow-sm bg-body-tertiary p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="h3 fw-bold text-body-emphasis mb-0">Soluciones de Software</h2>
             </div>
+            <p class="text-secondary small mb-4">
+                Proyectos representativos desarrollados bajo estándares de arquitectura, pruebas unitarias y seguridad:
+            </p>
+
+            <ul class="list-unstyled row g-3 mb-0">
+                <!-- SmartTask -->
+                <li class="col-12 col-md-6">
+                    <article class="p-3 bg-body rounded border h-100 d-flex flex-column">
+                        <div class="mb-2">
+                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Java SE</span>
+                            <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">JUnit 5</span>
+                        </div>
+                        <h3 class="h5 fw-bold mb-1">SmartTask</h3>
+                        <p class="text-secondary small flex-grow-1">Gestor de tareas POO con más de 88% de cobertura en pruebas unitarias.</p>
+                        <a href="/proyectos/smart-task/" class="btn btn-sm btn-link px-0 text-decoration-none">Ver ficha técnica &rarr;</a>
+                    </article>
+                </li>
+
+                <!-- Biblioteca UNTEC -->
+                <li class="col-12 col-md-6">
+                    <article class="p-3 bg-body rounded border h-100 d-flex flex-column">
+                        <div class="mb-2">
+                            <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Jakarta EE</span>
+                            <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle">MySQL</span>
+                        </div>
+                        <h3 class="h5 fw-bold mb-1">Biblioteca UNTEC</h3>
+                        <p class="text-secondary small flex-grow-1">Sistema web MVC con Servlets, JSP y persistencia DAO.</p>
+                        <a href="/proyectos/biblioteca-untec/" class="btn btn-sm btn-link px-0 text-decoration-none">Ver ficha técnica &rarr;</a>
+                    </article>
+                </li>
+
+                <!-- Alkemy Manager -->
+                <li class="col-12 col-md-6">
+                    <article class="p-3 bg-body rounded border h-100 d-flex flex-column">
+                        <div class="mb-2">
+                            <span class="badge bg-success-subtle text-success border border-success-subtle">Spring Boot 3</span>
+                            <span class="badge bg-dark-subtle text-dark border border-dark-subtle">Security</span>
+                        </div>
+                        <h3 class="h5 fw-bold mb-1">Alkemy Edu Manager</h3>
+                        <p class="text-secondary small flex-grow-1">API REST y plataforma académica con RBAC y JPA.</p>
+                        <a href="/proyectos/alkemy-manager/" class="btn btn-sm btn-link px-0 text-decoration-none">Ver ficha técnica &rarr;</a>
+                    </article>
+                </li>
+
+                <!-- Alke Wallet -->
+                <li class="col-12 col-md-6">
+                    <article class="p-3 bg-body rounded border h-100 d-flex flex-column">
+                        <div class="mb-2">
+                            <span class="badge bg-info-subtle text-info-emphasis border border-info-subtle">Bootstrap 5</span>
+                            <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">JS / jQuery</span>
+                        </div>
+                        <h3 class="h5 fw-bold mb-1">Alke Wallet</h3>
+                        <p class="text-secondary small flex-grow-1">Billetera digital interactiva con autenticación simulada y transacciones.</p>
+                        <a href="/proyectos/wallet/login/" class="btn btn-sm btn-link px-0 text-decoration-none">Ver demo web &rarr;</a>
+                    </article>
+                </li>
+            </ul>
         </section>
     </div>
 
-    <div class="col col-1">
-        <!-- Lateral de Habilidades-->
-        <aside class="skills">
-            <div class="row">
-                <div class="col">
-                    <section class="skills-set">
-                        <h6>Habilidades técnicas</h6>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </section>
-                </div>
-                
-                <div class="col">
-                    <section class="skills-set">
-                        <h6>Habilidades blandas</h6>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </section>
-                </div>
-            </div>
+    <!-- Columna Lateral: Habilidades y Competencias -->
+    <div class="col-12 col-lg-4">
+        <aside class="d-flex flex-column gap-4">
+            <!-- Habilidades Técnicas -->
+            <section class="card border-0 shadow-sm bg-body-tertiary p-4">
+                <h2 class="h4 fw-bold text-body-emphasis mb-3 border-bottom pb-2">
+                    <i class="bi bi-cpu me-2 text-primary"></i>Habilidades Técnicas
+                </h2>
+                <ul class="list-unstyled d-flex flex-column gap-2 mb-0 small">
+                    <li class="d-flex justify-content-between align-items-center">
+                        <span class="text-body-secondary">Java / Jakarta EE / Spring</span>
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Intermedio</span>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center">
+                        <span class="text-body-secondary">Python / Flask</span>
+                        <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Intermedio</span>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center">
+                        <span class="text-body-secondary">SQL (MySQL / MariaDB)</span>
+                        <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Intermedio</span>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center">
+                        <span class="text-body-secondary">HTML5 / CSS3 / Bootstrap 5</span>
+                        <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Intermedio</span>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center">
+                        <span class="text-body-secondary">Git / GitHub / JUnit 5</span>
+                        <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Intermedio</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Habilidades Blandas / Metodológicas -->
+            <section class="card border-0 shadow-sm bg-body-tertiary p-4">
+                <h2 class="h4 fw-bold text-body-emphasis mb-3 border-bottom pb-2">
+                    <i class="bi bi-person-check me-2 text-primary"></i>Competencias
+                </h2>
+                <ul class="list-unstyled d-flex flex-column gap-2 mb-0 small">
+                    <li class="d-flex justify-content-between align-items-center">
+                        <span class="text-body-secondary">Aprendizaje Continuo</span>
+                        <span class="badge bg-success-subtle text-success border border-success-subtle">Destacada</span>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center">
+                        <span class="text-body-secondary">Comunicación Efectiva</span>
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Intermedio</span>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center">
+                        <span class="text-body-secondary">Resolución de Problemas</span>
+                        <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Intermedio</span>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center">
+                        <span class="text-body-secondary">Trabajo en Equipo</span>
+                        <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Intermedio</span>
+                    </li>
+                </ul>
+            </section>
         </aside>
     </div>
 </div>
