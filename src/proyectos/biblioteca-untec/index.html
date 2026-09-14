@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block title %}Biblioteca Digital UNTEC | Ficha Técnica{% endblock %}
+
+{% block content %}
+<article class="py-2">
+    <!-- Presentación General del Proyecto -->
+    <section class="card border-0 shadow-sm bg-body-tertiary p-4 mb-4">
+        <div class="row g-4">
+            <!-- Bloque Principal: Descripción y Acciones -->
+            <div class="col-12 col-lg-8">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Jakarta EE</span>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Tomcat 10.1</span>
+                    <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle">MariaDB / MySQL</span>
+                    <span class="badge bg-info-subtle text-info-emphasis border border-info-subtle">Patrón MVC</span>
+                </div>
+
+                <h1 class="display-6 fw-bold text-body-emphasis mb-3">Biblioteca Digital UNTEC</h1>
+                <p class="lead text-body-secondary">
+                    Plataforma web para la gestión bibliográfica institucional, 
+                    inventario y préstamos estudiantiles con arquitectura MVC, controladores centralizados, seguridad defensiva
+                    y persistencia relacional estricta.
+                </p>
+
+                <div class="d-flex flex-wrap gap-2 pt-2">
+                    <a href="https://github.com/IgnacioAntGP/Biblioteca-Digital-UNTEC" target="_blank" rel="noopener noreferrer" class="btn btn-dark">
+                        <i class="bi bi-github me-1"></i> Repositorio GitHub
+                    </a>
+                    <a href="/" class="btn btn-outline-secondary">Volver al Inicio</a>
+                </div>
+            </div>
+
+            <!-- Subsección Anidada: Ficha Técnica Resumen -->
+            <section class="col-12 col-lg-4">
+                <div class="p-3 bg-body rounded border shadow-sm h-100">
+                    <h2 class="h5 fw-bold mb-3 border-bottom pb-2">Especificaciones Técnicas</h2>
+                    <dl class="row mb-0 small">
+                        <dt class="col-5 text-body-secondary">Lenguaje:</dt>
+                        <dd class="col-7 text-body-emphasis">Java (Jakarta EE)</dd>
+
+                        <dt class="col-5 text-body-secondary">Servidor:</dt>
+                        <dd class="col-7 text-body-emphasis">Apache Tomcat 10.1</dd>
+
+                        <dt class="col-5 text-body-secondary">Controladores:</dt>
+                        <dd class="col-7 text-body-emphasis">Jakarta Servlets</dd>
+
+                        <dt class="col-5 text-body-secondary">Base de Datos:</dt>
+                        <dd class="col-7 text-body-emphasis">MySQL (JDBC)</dd>
+
+                        <dt class="col-5 text-body-secondary">Vistas:</dt>
+                        <dd class="col-7 text-body-emphasis">JSP, JSTL & EL</dd>
+
+                        <dt class="col-5 text-body-secondary">Gestor Build:</dt>
+                        <dd class="col-7 text-body-emphasis">Apache Maven (.war)</dd>
+                    </dl>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Secciones Detalladas -->
+    <div class="row g-4">
+        <!-- Columna Izquierda: Arquitectura y Persistencia -->
+        <div class="col-12 col-lg-7">
+            <!-- Arquitectura MVC y Enrutamiento -->
+            <section class="card border-0 shadow-sm bg-body-tertiary p-4 mb-4">
+                <h2 class="h4 fw-bold text-body-emphasis mb-3">Arquitectura MVC</h2>
+                <p class="text-body-secondary small">
+                    El sistema organiza su lógica de control centralizando responsabilidades por módulo de negocio en lugar de acoplar un Servlet a cada archivo físico:
+                </p>
+
+                <ul class="list-group list-group-flush bg-transparent small mb-0">
+                    <li class="list-group-item bg-transparent px-0 text-secondary">
+                        <strong class="text-body-emphasis">Action Dispatcher (Front-Controller):</strong> El controlador <code>CatalogoServlet</code> unifica las vistas públicas del catálogo y el CRUD administrativo de libros mediante evaluaciones con <code>switch(accion)</code>, delimitando la navegación de lectura y el procesamiento transaccional.
+                    </li>
+                    <li class="list-group-item bg-transparent px-0 text-secondary">
+                        <strong class="text-body-emphasis">Formularios Híbridos Reutilizables:</strong> Vista unificada en <code>admin-formulario-libro.jsp</code> que resuelve dinámicamente mediante Expression Language (EL) el estado de los libros a través de la presencia o ausencia de identificadores ocultos (<code>&lt;input type="hidden"&gt;</code>).
+                    </li>
+                    <li class="list-group-item bg-transparent px-0 text-secondary">
+                        <strong class="text-body-emphasis">Vistas Dinámicas con JSTL y Context Path:</strong> Resuelve rutas absolutas mediante <code>${pageContext.request.contextPath}</code> y la directiva <code>&lt;c:url&gt;</code>, previniendo referencias rotas hacia assets o endpoints en subcarpetas.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Seguridad Defensiva y Sesiones -->
+            <section class="card border-0 shadow-sm bg-body-tertiary p-4">
+                <h2 class="h4 fw-bold text-body-emphasis mb-3">Seguridad y Manejo de Concurrencia</h2>
+                <p class="text-body-secondary small">
+                    Patrones defensivos aplicados en la capa web y persistencia para blindar el flujo de datos:
+                </p>
+
+                <ul class="list-group list-group-flush bg-transparent small mb-0">
+                    <li class="list-group-item bg-transparent px-0 text-secondary">
+                        <strong class="text-body-emphasis">Control de Acceso en Servlets:</strong> Método de intercepción <code>validarAdmin()</code> que comprueba la existencia de la sesión HTTP activa y el rol del usuario (<code>ADMIN</code>).
+                    </li>
+                    <li class="list-group-item bg-transparent px-0 text-secondary">
+                        <strong class="text-body-emphasis">Sanitización SQL:</strong> Consultas preparadas exclusivamente con <code>PreparedStatement</code> con tipado estricto en parámetros posicionales, anulando vectores de inyección SQL.
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Columna Derecha: Modelo de Datos y Flujos -->
+        <div class="col-12 col-lg-5">
+            <section class="card border-0 shadow-sm bg-body-tertiary p-4 h-100">
+                <h2 class="h4 fw-bold text-body-emphasis mb-3">Persistencia y Flujo Transaccional</h2>
+                <p class="text-body-secondary small">
+                    Estructuración relacional en MariaDB / MySQL gestionada a través del patrón DAO (Data Access Object):
+                </p>
+
+                <!-- Entidades Relacionales -->
+                <div class="p-3 bg-body rounded border mb-3">
+                    <h3 class="h6 fw-bold text-primary mb-2">Entidades Principales</h3>
+                    <ul class="list-unstyled small mb-0 text-secondary">
+                        <li class="mb-1"><strong class="text-body-emphasis">Usuario:</strong> Credenciales y roles diferenciados (<code>ADMIN</code>, <code>ALUMNO</code>).</li>
+                        <li class="mb-1"><strong class="text-body-emphasis">Libro:</strong> Catálogo con ISBN, clasificación bibliográfica y rutas relativas de portada.</li>
+                        <li><strong class="text-body-emphasis">Prestamo:</strong> Cruce transaccional que registra préstamos, cálculo de fechas tope y estado (<code>PRESTADO</code>, <code>DEVUELTO</code>).</li>
+                    </ul>
+                </div>
+
+                <!-- Roles de Usuario -->
+                <h3 class="h6 fw-bold text-body-emphasis mb-2">Flujos Operativos por Perfil</h3>
+                <div class="table-responsive">
+                    <table class="table table-sm table-bordered align-middle small mb-0">
+                        <thead class="table-secondary">
+                            <tr>
+                                <th>Rol</th>
+                                <th>Alcance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge bg-danger">ADMIN</span></td>
+                                <td>CRUD - Gestión completa del catálogo , supervisión de préstamos y auditoría de inventario.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge bg-primary">ALUMNO</span></td>
+                                <td>Exploración del catálogo público, solicitud de préstamos e historial personal.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+</article>
+{% endblock %}
